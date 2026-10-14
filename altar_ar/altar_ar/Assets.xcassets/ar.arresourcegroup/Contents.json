@@ -6,6 +6,9 @@
   "resources" : [
     {
       "filename" : "perro.arreferenceimage"
+    },
+    {
+      "filename" : "perro2.arreferenceimage"
     }
   ]
 }

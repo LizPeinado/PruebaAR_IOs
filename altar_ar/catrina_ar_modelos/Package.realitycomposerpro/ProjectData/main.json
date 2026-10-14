@@ -1,9 +1,11 @@
 {
   "pathsToIds" : {
-    "\/catrina_ar_modelos\/Sources\/catrina_ar_modelos\/catrina_ar_modelos.rkassets\/Scene.usda" : "E29B8415-83ED-4E11-AA8E-6F1290005B84"
+    "\/catrina_ar_modelos\/Sources\/catrina_ar_modelos\/catrina_ar_modelos.rkassets\/Scene.usda" : "E29B8415-83ED-4E11-AA8E-6F1290005B84",
+    "catrina_ar_modelos\/Sources\/catrina_ar_modelos\/catrina_ar_modelos.rkassets\/modelo_base.usda" : "0C7A7F19-68A8-42A6-A616-ACCC09E5A339"
   },
   "projectID" : 8885241701212771063,
   "uuidToIntID" : {
+    "0C7A7F19-68A8-42A6-A616-ACCC09E5A339" : 1739029249166429700,
     "E29B8415-83ED-4E11-AA8E-6F1290005B84" : -2312584711765283349
   }
 }

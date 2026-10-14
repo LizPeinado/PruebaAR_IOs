@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		FB867F95307FCD53000ADC0B /* catrina_ar_modelos in Frameworks */ = {isa = PBXBuildFile; productRef = FB867F94307FCD53000ADC0B /* catrina_ar_modelos */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		FB625434307D159200D7DD43 /* altar_ar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = altar_ar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB867F95307FCD53000ADC0B /* catrina_ar_modelos in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = altar_ar;
 			packageProductDependencies = (
+				FB867F94307FCD53000ADC0B /* catrina_ar_modelos */,
 			);
 			productName = altar_ar;
 			productReference = FB625434307D159200D7DD43 /* altar_ar.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = FB62542B307D159200D7DD43;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				FB867F93307FCD52000ADC0B /* XCLocalSwiftPackageReference "catrina_ar_modelos" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FB625435307D159200D7DD43 /* Products */;
 			projectDirPath = "";
@@ -334,6 +343,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		FB867F93307FCD52000ADC0B /* XCLocalSwiftPackageReference "catrina_ar_modelos" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = catrina_ar_modelos;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FB867F94307FCD53000ADC0B /* catrina_ar_modelos */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = catrina_ar_modelos;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FB62542C307D159200D7DD43 /* Project object */;
 }

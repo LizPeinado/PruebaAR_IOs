@@ -10,6 +10,7 @@
 
 def Xform "Root"
 {
+    reorder nameChildren = ["aparecer", "spin", "animacion_caja"]
     def Cube "caja" (
         active = true
         prepend apiSchemas = ["MaterialBindingAPI"]
@@ -52,6 +53,234 @@ def Xform "Root"
         def RealityKitComponent "InputTarget"
         {
             uniform token info:id = "RealityKit.InputTarget"
+        }
+    }
+
+    def "chica" (
+        active = true
+        customData = {
+            float3 rotationEulerHint = (-1.5707964, 0, 0)
+        }
+        references = @chica_aventurera/chica.usdz@
+    )
+    {
+        quatf xformOp:orient = (0.70710677, -0.70710677, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (-1.1394787, -5.9604645e-8, 1.1920929e-7)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def RealityKitComponent "AnimationLibrary"
+        {
+            token info:id = "RealityKit.AnimationLibrary"
+
+            def RealityKitAnimationFile "saludo_chica"
+            {
+                uniform asset file = @chica_aventurera/animaciones/saludo_chica.usdc@
+                uniform bool looping = 1
+                uniform string name = "saludo_chica"
+            }
+        }
+
+        def RealityKitComponent "RCP_BehaviorsContainer"
+        {
+            rel behaviors = </Root/chica/OnAddedToScene>
+            uniform token info:id = "RCP.BehaviorsContainer"
+        }
+
+        def Preliminary_Behavior "OnAddedToScene"
+        {
+            rel actions = </Root/chica/OnAddedToScene/Action>
+            uniform bool exclusive
+            rel triggers = </Root/chica/OnAddedToScene/Trigger>
+
+            def Preliminary_Trigger "Trigger"
+            {
+                rel affectedObjects = </Root/chica>
+                token info:id = "SceneTransition"
+            }
+
+            def Preliminary_Action "Action"
+            {
+                rel affectedObjects = </Root>
+                rel animationLibraryKey = </Root/aparecer>
+                rel animationLibraryKeyOverrideKey = </Root/chica/OnAddedToScene/Trigger>
+                token info:id = "PlayTimeline"
+                int loops = 0
+                int performCount = 1
+                token type = "serial"
+            }
+        }
+    }
+
+    def RealityKitTimeline "aparecer"
+    {
+        reorder nameChildren = ["Track", "Track3", "Track2", "Track4"]
+        def RealityKitTrack "Track"
+        {
+            def RealityKitAction "Animation"
+            {
+                string actionKind = "animation"
+                string animation = "saludo_chica"
+                int blendLayer = 500
+                double duration = 0.7916666865348816
+                uniform token info:id = "53F33FD6-5D54-4A70-A1AD-4714A24CA274"
+                double loopCount = 0
+                bool separateAnimatedValue = 1
+                double startTime = 0
+                rel target = </Root/chica>
+
+                def RealityKitStruct "handoffType"
+                {
+                }
+            }
+        }
+
+        def RealityKitTrack "Track3"
+        {
+            def RealityKitAction "Transform_By2"
+            {
+                string actionKind = "moveBy"
+                int blendLayer = 300
+                double duration = 1
+                uniform token info:id = "DE18DCB0-27F2-495D-AD74-8A848600B645"
+                float3 position = (0, 0, 0)
+                double startTime = 1.0000000001
+                rel target = </Root/chica>
+                float2 ui:nodegraph:node:pos = (20, 20)
+                int ui:nodegraph:node:stackingOrder = 1
+
+                def RealityKitStruct "timingFunction"
+                {
+                }
+            }
+
+            def RealityKitAction "Transform_To"
+            {
+                string actionKind = "moveTo"
+                int blendLayer = 300
+                double duration = 1
+                uniform token info:id = "F0CC6CE3-B87B-4CDE-BC47-2B0BBD78A751"
+                float3 position = (-1.931834, 0, 0.004583955)
+                quatf rotation = (0.70710677, -0.7071067, 0, 0)
+                float3 scale = (0.99999994, 0.99999994, 0.99999994)
+                double startTime = 1.0000007586752414e-10
+                rel target = </Root/chica>
+
+                def RealityKitStruct "transformMode"
+                {
+                    rel referenceEntity = </Root>
+                    token type = "parent"
+                }
+
+                def RealityKitStruct "timingFunction"
+                {
+                }
+            }
+        }
+
+        def RealityKitTrack "Track2"
+        {
+            def RealityKitAction "Play_Timeline"
+            {
+                string actionKind = "timeline"
+                int blendLayer = 500
+                double duration = 1
+                uniform token info:id = "58AD4D5E-8500-4A2C-9EEE-C749C7D451D9"
+                double loopCount = 0
+                double startTime = 0
+                rel timeline = </Root/spin>
+            }
+        }
+
+        def RealityKitTrack "Track4"
+        {
+            def RealityKitAction "Play_Timeline"
+            {
+                string actionKind = "timeline"
+                int blendLayer = 500
+                double duration = 1.0354773117438356
+                uniform token info:id = "5F37B5C3-8C4B-4ADF-A325-E8D0260440B0"
+                double loopCount = 0
+                double startTime = 0
+                rel timeline = </Root/animacion_caja>
+            }
+        }
+    }
+
+    def RealityKitTimeline "spin"
+    {
+        def RealityKitTrack "Track"
+        {
+            def RealityKitAction "Spin"
+            {
+                string actionKind = "spin"
+                int blendLayer = 400
+                double duration = 1
+                uniform token info:id = "FDAA021E-51DF-4604-BC1A-890D74E14944"
+                float3 localAxis = (0, 0, 1)
+                float revolutions = 3
+                double startTime = 0
+                rel target = </Root/chica>
+
+                def RealityKitStruct "timingFunction"
+                {
+                }
+            }
+        }
+    }
+
+    def RealityKitTimeline "animacion_caja"
+    {
+        reorder nameChildren = ["Track", "Track2"]
+        def RealityKitTrack "Track"
+        {
+            def RealityKitAction "Transform_To"
+            {
+                string actionKind = "moveTo"
+                int blendLayer = 300
+                double duration = 0.613953101217656
+                uniform token info:id = "16CCDEA9-8F1F-4F1A-BE4C-FBAB77C38B49"
+                float3 position = (0, 0.90487, 0)
+                quatf rotation = (1, 0, 0, 0)
+                float3 scale = (1, 1, 1)
+                double startTime = 0
+                rel target = </Root/caja>
+
+                def RealityKitStruct "transformMode"
+                {
+                    rel referenceEntity = </Root>
+                    token type = "parent"
+                }
+
+                def RealityKitStruct "timingFunction"
+                {
+                }
+            }
+
+            def RealityKitAction "Transform_To2"
+            {
+                string actionKind = "moveTo"
+                int blendLayer = 300
+                double duration = 0.4215242104261796
+                uniform token info:id = "16CCDEA9-8F1F-4F1A-BE4C-FBAB77C38B49"
+                float3 position = (0, 0, 0)
+                quatf rotation = (1, 0, 0, 0)
+                float3 scale = (1, 1, 1)
+                double startTime = 0.613953101317656
+                rel target = </Root/caja>
+                float2 ui:nodegraph:node:pos = (20, 20)
+                int ui:nodegraph:node:stackingOrder = 1
+
+                def RealityKitStruct "transformMode"
+                {
+                    rel referenceEntity = </Root>
+                    token type = "parent"
+                }
+
+                def RealityKitStruct "timingFunction"
+                {
+                }
+            }
         }
     }
 }

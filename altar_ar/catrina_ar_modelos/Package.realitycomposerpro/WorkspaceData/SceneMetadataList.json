@@ -1,4 +1,103 @@
 {
+  "0C7A7F19-68A8-42A6-A616-ACCC09E5A339" : {
+    "objectMetadataList" : [
+      [
+        "0C7A7F19-68A8-42A6-A616-ACCC09E5A339",
+        "Root",
+        "spin",
+        "Track"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "0C7A7F19-68A8-42A6-A616-ACCC09E5A339",
+        "Root",
+        "animacion_caja",
+        "Track"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "0C7A7F19-68A8-42A6-A616-ACCC09E5A339",
+        "Root",
+        "animacion_caja"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "0C7A7F19-68A8-42A6-A616-ACCC09E5A339",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "0C7A7F19-68A8-42A6-A616-ACCC09E5A339",
+        "Root",
+        "spin"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "0C7A7F19-68A8-42A6-A616-ACCC09E5A339",
+        "Root",
+        "aparecer",
+        "Track3"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "0C7A7F19-68A8-42A6-A616-ACCC09E5A339",
+        "Root",
+        "aparecer"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "0C7A7F19-68A8-42A6-A616-ACCC09E5A339",
+        "Root",
+        "aparecer",
+        "Track2"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "0C7A7F19-68A8-42A6-A616-ACCC09E5A339",
+        "Root",
+        "aparecer",
+        "Track4"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "0C7A7F19-68A8-42A6-A616-ACCC09E5A339",
+        "Root",
+        "aparecer",
+        "Track"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
   "E29B8415-83ED-4E11-AA8E-6F1290005B84" : {
     "objectMetadataList" : [
       [
