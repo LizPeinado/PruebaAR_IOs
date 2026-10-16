@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct altar_arApp: App {
+    @State var controlador = Controlador()
+    
     var body: some Scene {
         WindowGroup {
-            PantallaAr()
+            PantallaAR()
+                .environment(controlador)
         }
     }
 }
